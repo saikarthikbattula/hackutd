@@ -1,0 +1,219 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1d1c1c; /* Dark background */
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 80px; /* Adjust this based on your navbar height */
+}
+
+/* App Container */
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #1d1c1c; /* Dark background */
+  display: flex;
+  flex-direction: column;
+}
+
+/* General Section Styles */
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20vh 2rem; /* Adjust padding for vertical centering */
+  margin: 0;
+  box-sizing: border-box;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hidden by default */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Ensure first section is always visible on load */
+section:first-of-type {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Ensure it's in place */
+}
+
+/* When the section is active, make it visible */
+section.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Ensure proper positioning */
+}
+
+/* For smoother transitions and visibility of the first section */
+section.active {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+/* Landing Container */
+.landing-container {
+  max-width: 100%;
+  text-align: center;
+  padding: 20px; /* Adjust padding for spacing without cutting off */
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: 3rem; /* Adjust size to fit within the viewport */
+  color: #fff; /* Ensure text visibility */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem; /* Adjust subtitle size */
+  color: #f0c674;
+  margin-bottom: 2rem;
+}
+
+/* CTA Button */
+.cta {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.cta-button:hover {
+  background: #ff7a00;
+  transform: scale(1.1);
+}
+
+/* Info Section Styles */
+.info-section {
+  margin-top: 3rem;
+}
+
+.info-section h2 {
+  font-size: 2.5rem;
+  color: #f0c674;
+  margin-bottom: 1.5rem;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.landing-container {
+  max-width: 100%;
+  text-align: center;
+  padding: 20px; /* Adjust padding for spacing without cutting off */
+  margin-top: 100vh; /* Add margin to push content down */
+}
+
+/* Info Section Styles */
+section h2 {
+  font-size: 2.5rem;
+  color: #fff; /* Ensure text color is white */
+  margin-bottom: 1.5rem;
+}
+
+section:nth-of-type(2) h2 { /* Target h2 inside the second section specifically */
+  margin-top: -5rem; /* Pull the h2 upwards */
+}
+
+.info-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Make scrolling smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar .logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar .nav-links {
+    gap: 1rem;
+  }
+
+  .navbar .nav-links a {
+    font-size: 1rem;
+  }
+
+  .navbar .cta-button {
+    padding: 8px 16px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

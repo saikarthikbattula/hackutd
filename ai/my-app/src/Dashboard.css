@@ -1,0 +1,291 @@
+/* CSS Variables for Colors */
+:root {
+  --sidebar-bg: #454545;
+  --sidebar-hover-bg: #373737;
+  --highlight-color: #56ccf2;
+  --dashboard-bg: #1d1c1c;
+  --cta-hover-bg: #2e2e2e;
+  --text-color: white;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Reset styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: var(--dashboard-bg);
+  color: var(--text-color);
+}
+
+/* Container for the entire dashboard */
+.dashboard-container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 20px auto;
+  color: var(--text-color);
+  background-color: var(--dashboard-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+/* Sidebar hover effect */
+.sidebar:hover {
+  width: 240px;
+  background-color: var(--sidebar-hover-bg);
+}
+
+/* Sidebar links */
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li a:focus {
+  color: var(--highlight-color);
+}
+
+/* Active link */
+.sidebar nav ul li a.active {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+/* Icons and Link Text */
+.sidebar nav ul li a .icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.sidebar nav ul li a .link-text {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar:hover .link-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Profile Picture */
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  object-fit: cover;
+}
+
+.profile-name {
+  color: var(--text-color);
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar:hover .profile-name {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Footer Links */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 10px 0;
+}
+
+.sidebar-footer a {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-footer a:hover {
+  color: var(--highlight-color);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 80px;
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--dashboard-bg);
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ .main-content {
+  margin-left: 240px;
+}
+
+/* Section Styling */
+.section {
+  background-color: var(--sidebar-hover-bg);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Highlight Box */
+.highlight-box {
+  background-color: var(--cta-hover-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: var(--text-color);
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.highlight-box h3 {
+  margin-bottom: 10px;
+  color: var(--highlight-color);
+}
+
+/* Internship Boxes */
+.internship-boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.internship-box {
+  background-color: #292929;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #444;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.internship-box:hover {
+  background-color: #373737;
+  transform: translateY(-5px);
+}
+
+/* Popup Modal */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: var(--dashboard-bg);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  max-width: 500px;
+  width: 90%;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--highlight-color);
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--highlight-color);
+  transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 95%;
+  }
+
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar:hover {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .sidebar:hover ~ .main-content {
+    margin-left: 200px;
+  }
+}
